@@ -1,0 +1,16 @@
+E:\PROJECTS\C#\RainbowSchool\RainbowSchool\bin\Debug\net5.0\RainbowSchool.exe
+E:\PROJECTS\C#\RainbowSchool\RainbowSchool\bin\Debug\net5.0\RainbowSchool.deps.json
+E:\PROJECTS\C#\RainbowSchool\RainbowSchool\bin\Debug\net5.0\RainbowSchool.runtimeconfig.json
+E:\PROJECTS\C#\RainbowSchool\RainbowSchool\bin\Debug\net5.0\RainbowSchool.runtimeconfig.dev.json
+E:\PROJECTS\C#\RainbowSchool\RainbowSchool\bin\Debug\net5.0\RainbowSchool.dll
+E:\PROJECTS\C#\RainbowSchool\RainbowSchool\bin\Debug\net5.0\ref\RainbowSchool.dll
+E:\PROJECTS\C#\RainbowSchool\RainbowSchool\bin\Debug\net5.0\RainbowSchool.pdb
+E:\PROJECTS\C#\RainbowSchool\RainbowSchool\obj\Debug\net5.0\RainbowSchool.csproj.AssemblyReference.cache
+E:\PROJECTS\C#\RainbowSchool\RainbowSchool\obj\Debug\net5.0\RainbowSchool.GeneratedMSBuildEditorConfig.editorconfig
+E:\PROJECTS\C#\RainbowSchool\RainbowSchool\obj\Debug\net5.0\RainbowSchool.AssemblyInfoInputs.cache
+E:\PROJECTS\C#\RainbowSchool\RainbowSchool\obj\Debug\net5.0\RainbowSchool.AssemblyInfo.cs
+E:\PROJECTS\C#\RainbowSchool\RainbowSchool\obj\Debug\net5.0\RainbowSchool.csproj.CoreCompileInputs.cache
+E:\PROJECTS\C#\RainbowSchool\RainbowSchool\obj\Debug\net5.0\RainbowSchool.dll
+E:\PROJECTS\C#\RainbowSchool\RainbowSchool\obj\Debug\net5.0\ref\RainbowSchool.dll
+E:\PROJECTS\C#\RainbowSchool\RainbowSchool\obj\Debug\net5.0\RainbowSchool.pdb
+E:\PROJECTS\C#\RainbowSchool\RainbowSchool\obj\Debug\net5.0\RainbowSchool.genruntimeconfig.cache

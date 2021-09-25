@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Helpers\IdGenerator.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Helpers\IdGenerator.cs" />
+  </ItemGroup>
+
+</Project>

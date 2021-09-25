@@ -7,11 +7,13 @@ namespace RainbowSchool.Classes
     {
         public readonly int ID;
         public string Name {get; set;}
+        public Class c { get; set; }
 
-        public Teacher(int ID, string name)
+        public Teacher(int ID, string Name, Class c)
         {
             this.ID = ID;
-            this.Name = name;
+            this.Name = Name;
+            this.c = c;
         }
 
         //Class and section

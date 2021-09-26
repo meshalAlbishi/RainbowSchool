@@ -5,9 +5,15 @@ namespace RainbowSchool.Formatter
 {
     public static class TeacherFormatter
     {
-        public static string Format(Teacher teacher)
+        public static string FileFormat(Teacher teacher)
         {
-            return "";
+            
+            return teacher.ID + " " + teacher.Name;
+        }
+
+        public static string ConsoleFormat(Teacher teacher)
+        {
+            return String.Format("{0,-15}{1,-25}", teacher.ID, teacher.Name);
         }
     }
 }

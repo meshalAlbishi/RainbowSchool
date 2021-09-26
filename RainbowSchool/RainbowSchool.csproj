@@ -6,11 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Helpers\IdGenerator.cs" />
+    <None Remove="Data\data.txt" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Helpers\IdGenerator.cs" />
+    <Content Include="Data\data.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

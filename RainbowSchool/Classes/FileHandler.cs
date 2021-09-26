@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace RainbowSchool.Classes
 {
     public  class FileHandler
     {
         
-        private static string filePath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "Data", "data.txt");
+        private static string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "data.txt");
+        //private static string filePath = Path.Combine(Directory.GetCurrentDirectory(), "\\Data\\data.txt");
         //private static string filePath =  @"../Data/data.txt";
 
         public static List<string> readFile()

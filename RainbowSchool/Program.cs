@@ -1,8 +1,8 @@
-﻿using RainbowSchool.Classes;
-using RainbowSchool.Controller;
-using RainbowSchool.Formatter;
+﻿using System;
 using RainbowSchool.Helpers;
-using System;
+using RainbowSchool.Classes;
+using RainbowSchool.Formatter;
+using RainbowSchool.Controller;
 using System.Collections.Generic;
 
 namespace RainbowSchool
@@ -14,9 +14,17 @@ namespace RainbowSchool
 
         static void Main(string[] args)
         {
-            start();
-
-            Console.ReadLine();
+            try 
+	        {	        
+		        start();
+                Console.ReadLine();
+	        }
+	        catch (Exception ex)
+	        {
+                Console.WriteLine("errrorr");
+                Console.WriteLine(ex.StackTrace);
+                Console.ReadLine();
+	        }
         }
 
 
@@ -45,13 +53,21 @@ namespace RainbowSchool
 
         private static List<Teacher> readDataFile()
         {
+
             List<string> lines = FileHandler.readFile();
+            
+            if(lines == null) { Environment.Exit(0); }
+            
             foreach(string line in lines)
             {
                 string[] lineData = line.Split();
-                Console.WriteLine(line);
 
-                Class c = ClassController.createClass(Int32.Parse(lineData[2]), lineData[3], lineData[4]);
+                if(lineData.Length <= 1)
+                {
+                    continue;
+                }
+
+                Class c = ClassController.createClass(Int32.Parse(lineData[2].Trim()), lineData[3], lineData[4]);
 
                 teachers.Add(TeacherController.createTeacher(Int32.Parse(lineData[0]), lineData[1], c));
             }
@@ -100,14 +116,17 @@ namespace RainbowSchool
                     break;
                 // --------------
                 case 3:
+                    updateTeacher();
                     break;
                 // --------------
                 case 4:
+                    deleteTeacher();
                     break;
                 // --------------
                 case 5:
+                    exit();
                     break;
-                    // --------------
+               // --------------
             }
         }
 
@@ -150,6 +169,107 @@ namespace RainbowSchool
         }
 
 
+        private static void updateTeacher()
+        {
+            Console.WriteLine("\n");
 
+            displayAllTeachers();
+
+            Console.Write("Please Enter Teacher ID to update: ");
+            int ID = Int32.Parse(Console.ReadLine());
+
+            bool isFound = false;
+            foreach(Teacher t in teachers)
+            {
+
+                if(t.ID == ID)
+                {                    
+
+                    isFound = true;
+                 
+                    Console.Write("\t\tPlease Enter teacher updated name: ");
+                    string teacherName = Console.ReadLine();
+
+                    Console.Write("\t\tPlease Enter updated class name: ");
+                    string className = Console.ReadLine();
+
+                    Console.Write("\t\tPlease Enter updated section name: ");
+                    string sectionName = Console.ReadLine();
+
+                    t.Name = teacherName;
+                    t.c.Name = className;
+                    t.c.Section = sectionName;
+                }
+            }
+
+
+            if (!isFound)
+            {
+                Console.WriteLine("No Teacher Found with the given ID :(");
+                Console.WriteLine("");
+            }
+
+        }
+
+
+        private static void deleteTeacher()
+        {
+            Console.WriteLine("\n");
+
+            displayAllTeachers();
+
+            Console.Write("Please Enter Teacher ID to update: ");
+            int ID = Int32.Parse(Console.ReadLine());
+
+            bool isFound = false;
+            foreach(Teacher t in teachers)
+            {
+                if(t.ID == ID)
+                {
+                    isFound = true;
+                    teachers.Remove(t);
+                }
+            }
+
+
+            if (!isFound)
+            {
+                Console.WriteLine("No Teacher Found with the given ID :(");
+                Console.WriteLine("");
+            }
+
+        }
+
+
+        private static void exit()
+        {
+            if (!writeDataFile())
+            {
+                
+                Console.WriteLine("Somthing Went Wrong While Save The Data :(");
+                Console.WriteLine("Try Again Please");
+
+                return;
+            }
+
+            Console.WriteLine("Thank you for your work :) !");
+            Console.WriteLine("Good Bye");
+
+            Environment.Exit(0);
+        }
+        
+
+        private static bool writeDataFile()
+        {
+            List<string> dataLines = new List<string>();
+
+            foreach(Teacher t in teachers)
+            {
+                dataLines.Add(TeacherFormatter.FileFormat(t) + " " + ClassFormatter.FileFormat(t.c));
+            }
+
+            Console.WriteLine(FileHandler.writeToFile(dataLines));
+            return true;
+        }
     }
 }

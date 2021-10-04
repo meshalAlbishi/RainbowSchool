@@ -4,7 +4,7 @@ namespace RainbowSchool.Classes
 {
     public class Class
     {
-        public readonly int ID;
+        public  int ID { get; set; }
         public string Name { get; set; }
         public string Section { get; set; }
 

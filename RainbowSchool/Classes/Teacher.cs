@@ -5,7 +5,7 @@ namespace RainbowSchool.Classes
 {
     public class Teacher
     {
-        public readonly int ID;
+        public int ID { get; set; }
         public string Name {get; set;}
         public Class c { get; set; }
 
